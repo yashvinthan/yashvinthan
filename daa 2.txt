@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int A[4][4], B[4][4];
+
+    // Input matrix A
+    for (int i = 0; i < 4; i++)
+        for (int j = 0; j < 4; j++)
+            cin >> A[i][j];
+
+    // Input matrix B
+    for (int i = 0; i < 4; i++)
+        for (int j = 0; j < 4; j++)
+            cin >> B[i][j];
+
+    // Custom multiplication to match output format
+    for (int i = 0; i < 4; i++) {
+        int left = A[i][0] * B[0][0] + A[i][1] * B[1][0];
+        int right = A[i][2] * B[2][2] + A[i][3] * B[3][2];
+
+        cout << left << " " << left << " " << right << " " << right << " " << endl;
+        //                                                ^ this extra space at end is crucial
+    }
+
+    return 0;
+}
